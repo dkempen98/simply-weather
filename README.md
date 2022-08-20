@@ -23,8 +23,6 @@ This uses a google maps API to get the location so you could also get very speci
 
 ## Sources
 
-Google geocoding API for the search: https://developers.google.com/maps/documentation/geocoding/overview
-
 OpenWeather One API for the forecasting: https://openweathermap.org/api/one-call-api
 
 ## Screenshot

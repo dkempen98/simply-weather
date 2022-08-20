@@ -69,9 +69,9 @@ function apiGeocodeSearch() {
   var apiCity = cityName.replace(" ", "+");
 
   fetch(
-    "https://maps.googleapis.com/maps/api/geocode/json?address=" +
+    "http://api.openweathermap.org/geo/1.0/direct?q=" +
       apiCity +
-      "&key=AIzaSyBha19ts9crM0ZHad1hyaCRdik-15T72U8"
+      "&appid=ed7ad3517cceea24f5ddf34da86b3e00"
   )
     .then(function (response) {
       if (!response.ok) {
@@ -83,8 +83,9 @@ function apiGeocodeSearch() {
     .then(function (data) {
       locationData = data;
       console.log(locationData);
-      latitude = locationData.results[0].geometry.location.lat;
-      longitude = locationData.results[0].geometry.location.lng;
+      console.log(locationData[0].lat)
+      latitude = locationData[0].lat;
+      longitude = locationData[0].lon;
       apiWeatherSearch(longitude, latitude);
     });
 }

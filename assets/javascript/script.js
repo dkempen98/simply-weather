@@ -69,7 +69,7 @@ function apiGeocodeSearch() {
   var apiCity = cityName.replace(" ", "+");
 
   fetch(
-    "http://api.openweathermap.org/geo/1.0/direct?q=" +
+    "https://api.openweathermap.org/geo/1.0/direct?q=" +
       apiCity +
       "&appid=ed7ad3517cceea24f5ddf34da86b3e00"
   )

@@ -1,11 +1,11 @@
 body {
-  background-color: lightgrey;
+  background-color: #3D60A7;
 }
 
 header {
   font-size: xx-large;
-  background-color: skyblue;
-  color: yellow;
+  background-color: #0F084B;
+  color: white;
 }
 
 ul {
@@ -15,15 +15,20 @@ ul {
 
 h4 {
   padding: 5px;
+  color: white;
 }
 img {
   max-height: 4rem;
 }
 
 .btn-primary {
-  background-color: skyblue;
+  background-color: #81B1D5;
   border-color: black;
   color: black;
+}
+
+.btn-primary:hover {
+  background-color: #0F084B;
 }
 
 .flex-container {
@@ -44,15 +49,25 @@ img {
 }
 
 .card {
-  background-color: skyblue;
+  background-color: #81B1D5;
   margin-top: 5px;
 }
 
 #current-info {
   border-style: solid;
-  border-color: yellow;
+  border-color: #0F084B;
   border-width: 10px;
   padding: 10px;
-  background-color: skyblue;
+  background-color: #81B1D5;
   border-radius: 5px;
+}
+
+#search-button {
+  font-weight: bolder;
+}
+
+#search-button:hover,
+#search-button:focus {
+  cursor: pointer;
+  background-color: #d8d7d7;
 }

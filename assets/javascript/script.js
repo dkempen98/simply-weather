@@ -48,7 +48,14 @@ function addToStorage() {
 }
 
 function addToList() {
+  let nameCapped = cityName.split(" ");
+  for(let i = 0; nameCapped.length > i; i++) {
+    nameCapped[i] = nameCapped[i][0].toUpperCase() + nameCapped[i].substr(1);
+  }
+  cityName = nameCapped.join(" ");
+
   var newCity = document.createElement("button");
+
   newCity.classList.add("btn", "btn-primary", "col-12", "m-1");
   newCity.setAttribute("value", cityName);
   sideMenu.appendChild(newCity);
@@ -62,7 +69,6 @@ function addToList() {
 
 function apiGeocodeSearch() {
   // https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
-  // https://maps.googleapis.com/maps/api/geocode/json?address={address}&key=AIzaSyBha19ts9crM0ZHad1hyaCRdik-15T72U8
 
   // Replace the spaces with +'s so the api call works
 
@@ -172,7 +178,7 @@ function forecast(weather) {
         windDirection = "NW";
       }
       setWind.textContent =
-        "Wind Speed & Direction: " + wind + " " + windDirection;
+        "Wind Speed (MPH) & Direction: " + wind + " " + windDirection;
 
       //   humidity;
       var setHumidity = document.querySelector(".day-" + i + ".humidity");
@@ -185,24 +191,26 @@ function forecast(weather) {
       if (uvi < 3) {
         setUvi.style.backgroundColor = "Green";
         setUvi.style.color = "white";
-        setUvi.style.padding = "0px 5px 0px 0px";
+        setUvi.style.padding = "3px";
         setUvi.style.borderRadius = "5px";
       } else if (uvi < 6) {
         setUvi.style.backgroundColor = "yellow";
-        setUvi.style.padding = "0px 5px 0px 0px";
+        setUvi.style.color = "black";
+        setUvi.style.padding = "3px";
         setUvi.style.borderRadius = "5px";
       } else if (uvi < 8) {
         setUvi.style.backgroundColor = "orange";
-        setUvi.style.padding = "0px 5px 0px 0px";
+        setUvi.style.color = "black";
+        setUvi.style.padding = "3px";
         setUvi.style.borderRadius = "5px";
       } else if (uvi < 11) {
         setUvi.style.backgroundColor = "red";
-        setUvi.style.padding = "0px 5px 0px 0px";
+        setUvi.style.padding = "3px";
         setUvi.style.borderRadius = "5px";
       } else {
         setUvi.style.backgroundColor = "purple";
         setUvi.style.color = "white";
-        setUvi.style.padding = "0px 5px 0px 0px";
+        setUvi.style.padding = "3px";
         setUvi.style.borderRadius = "5px";
       }
       setUvi.textContent = "UV Index: " + uvi;
